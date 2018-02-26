@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="temperatura.java.fx.controller.StackPaneController">
+   <right>
+      <VBox alignment="CENTER_LEFT" fillWidth="false" spacing="3.0">
+         <children>
+            <Label text="Output Scale" />
+            <RadioButton fx:id="c2" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#celcius" selected="true" text="Celcius" VBox.vgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group2" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="f2" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#celcius" text="Fahrenheit" toggleGroup="$group2" />
+            <RadioButton fx:id="k2" alignment="CENTER_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#celcius" text="Kelvin" toggleGroup="$group2" />
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <Label text="Input Scale" />
+            <RadioButton fx:id="c1" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#celcius" selected="true" text="Celcius" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group1" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="f1" mnemonicParsing="false" onAction="#celcius" text="Fahrenheit" toggleGroup="$group1" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></RadioButton>
+            <RadioButton fx:id="k1" mnemonicParsing="false" onAction="#celcius" text="Kelvin" toggleGroup="$group1" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></RadioButton>
+         </children>
+      </VBox>
+   </left>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <top>
+      <HBox alignment="CENTER" prefHeight="21.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Input: " />
+            <TextField fx:id="input" onKeyReleased="#celcius" prefHeight="25.0" prefWidth="88.0" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="254.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Output: " />
+            <TextField fx:id="output" disable="true" editable="false" prefHeight="25.0" prefWidth="83.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
